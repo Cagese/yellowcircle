@@ -1,5 +1,4 @@
 import sys
-from math import sin, cos, pi
 from random import randint
 
 from PyQt5 import uic
