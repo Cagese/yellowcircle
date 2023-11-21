@@ -37,9 +37,6 @@ class Suprematism(QMainWindow):
 
 
 
-    def initUI(self):
-        self.setGeometry(300, 300, 1000, 1000)
-        self.setWindowTitle('Рисование')
 
     def mousePressEvent(self, event):
         self.coords_ = [event.x(), event.y()]
@@ -49,13 +46,6 @@ class Suprematism(QMainWindow):
             self.status = 2
         self.drawf()
 
-    def mouseMoveEvent(self, event):
-        self.coords_ = [event.x(), event.y()]
-
-    def keyPressEvent(self, event):
-        if event.key() == Qt.Key_Space:
-            self.status = 3
-            self.drawf()
 
 
 if __name__ == '__main__':
