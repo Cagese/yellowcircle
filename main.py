@@ -1,17 +1,17 @@
 import sys
 from random import randint
 
-from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+from Ui import Ui_MainWindow
 
-class Suprematism(QMainWindow):
+
+class Suprematism(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('Ui.ui', self)
-        self.setMouseTracking(True)
+        self.setupUi(self)
         self.qp = QPainter()
         self.flag = False
         self.status = None
@@ -31,7 +31,7 @@ class Suprematism(QMainWindow):
     def draw(self, status):
         self.coords_ = [400,300]
         R = randint(20, 300)
-        self.qp.setBrush(QColor(255,255,0))
+        self.qp.setBrush(QColor(randint(1,255),randint(1,255),randint(1,255)))
         self.qp.drawEllipse(int(self.coords_[0] - R / 2),
                             int(self.coords_[1] - R / 2), R, R)
 
